@@ -1,0 +1,46 @@
+import os
+import csv 
+
+
+#open csv
+  csvpath = os.path.join("..", "Python3", "python-challenge", "PyBank", "Resources", "budget_data.csv")
+
+  #open and read csv
+  with open(csvpath) as csvfile:
+      csvreader = csv.reader(csvfile, delimiter=",")
+      print(csvreader)
+
+#Read the header row to exclude from counts
+  budget_data_csvheader = next(csvreader) 
+  #also try budget_data_csvheader = next(csvfile) 
+
+  
+  ###The total number of months included in the dataset ( count lines minus header row or index)
+      print(sum(1 for line in csv.reader(open("budget_data.csv")))-1 )
+      #should be 86
+
+##Built in functions in python
+    #maxnum = max(second_column)
+    #minnum = min(second_column)
+    #sumcol = sum(second_column)
+#The mean is the sum divided by the length
+      #meancol = sumcol/int(len(second_column))
+
+  ###The net total amount of "Profit/Losses" over the entire period
+  with open("budget_data.csv") as csvfile:
+    next(csvfile)
+    total = sum(int(r[1]) for r in csv.reader(csvfile)) #or second_column = [int(row[1]) for row in data]
+                  OR
+    total = 0
+    for row in csv.reader(csvfile):
+        total += int(row[1])
+    print(total)
+
+#The changes in "Profit/Losses" over the entire period, and then the average of those changes
+      #last number in column 2 - first number in column 2, average is the sum/ the number (86)
+
+#The greatest increase in profits (date and amount) over the entire period
+        #highest number
+
+#The greatest decrease in profits (date and amount) over the entire period
+        #lowest number
