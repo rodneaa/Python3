@@ -1,0 +1,72 @@
+import os
+import csv
+
+#read csv file from path : C:\Users\rodne\Python3\python-challenge\PyBank\Resources
+csvpath = os.path.join("..","Resources" ,"budget_data.csv")
+
+with open(csvpath) as csvfile:
+# CSVreader specifies delimiter and variable
+    csvreader = csv.reader(csvfile, delimiter=',')
+    print(csvreader)
+
+# Read the header row first , then read and print the addl rows
+    budget_csv_header = next(csvreader)
+    #print(f"CSV Header: {budget_csv_header}")
+
+
+
+***Enter output file info here, and print output under section; create empty lists***
+
+
+    for row in csvreader:
+       # print(row)
+        date_column.append(row[0])  
+        profit_losses.append(row[1])
+    
+        next
+       
+        #***Enter output file info here
+
+print(f'Financial Analysis')
+print(f'---------------------------------------------')
+
+###The total number of months included in the dataset
+      total_months=0
+      total_months = []
+      print(f'Total Months: ', total_months)
+       
+###The net total amount of "Profit/Losses" over the entire period 
+     def net_pl(double):
+      profit_losses = []
+    profit_losses = [int(row[1]) for row in data]
+    net_pl = sum(profit_losses)
+    print(f'Total:', net_pl)
+
+###The changes in "Profit/Losses" over the entire period, and then the average of those changes 
+        #*changes_pl = (difference ) last row less first row - after header
+        average = net_pl/total_months
+print(f'Average Change:', average)
+
+###The greatest Increase in profits (date and amount) over the entire period (print entire row from index, maybe?)
+        #max
+        date_column = []
+        *increased_profit=[]
+
+for amt in profit_losses
+    if amt == max[profit_losses]
+    increased_profit = amt
+           or
+increased_profit = [amt for amt in profit_losses if amt == max]
+ print(f'Greatest Increase: ', increased_profit)       
+
+###The greatest Decrease in profits (date and amount) over the entire period (print entire row from index, maybe?)
+        #min
+      *decreased_profit=[]
+if amt == min[profit_losses]
+  decreased_profit = amt
+           OR
+  decreased_profit = [amt for amt in profit_losses if amt == min]
+print(f'Greatest Decrease: ', decreased profit)
+
+
+
