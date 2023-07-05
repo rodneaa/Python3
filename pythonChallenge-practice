@@ -16,7 +16,7 @@ import csv
   budget_data_csvheader = next(csvreader) 
   #also try budget_data_csvheader = next(csvfile) 
 
-#create an index ?
+#create an index for each column
   
   ###The total number of months included in the dataset ( count lines minus header row or index)
       print(sum(1 for line in csv.reader(open("budget_data.csv")))-1 )
@@ -24,26 +24,40 @@ import csv
 
   ###The net total amount of "Profit/Losses" over the entire period
   with open("budget_data.csv") as csvfile:
-    next(csvfile)
-    second_column = [int(row[1]) for row in data]
+    next(csvfile, none)
+    profit_losses = [int(row[1]) for row in data]
                   OR
     total = 0
     for row in csv.reader(csvfile):
         total += int(row[1])
     print(total)
 
-#The changes in "Profit/Losses" over the entire period, and then the average of those changes
+  ### The changes in "Profit/Losses" over the entire period, and then the average of those changes
       #last number in column 2 - first number in column 2, average is the sum/ the number (86)
+  if index = row[1]  OR if
+change_pl = []
+def average()
 
-#The greatest increase in profits (date and amount) over the entire period
+### The greatest increase in profits (date and amount) over the entire period
         #highest number and date
+*increased_profit=[]
+for amt in profit losses
+  if amt == max[profit_losses]
+  increased_profit = amt
+   or #MAYBE
 
-  #MAYBE if second_column ==max num
-print(f"
+increased_profit = [amt for amt in profit_losses if amt == max]
 
-#The greatest decrease in profits (date and amount) over the entire period
+print(f'Greatest Increase: ', increased_profit)
+
+### The greatest decrease in profits (date and amount) over the entire period
         #lowest number and date
-
+*decreased_profit=[]
+if amt == min[profit_losses]
+  decreased_profit = amt
+           OR
+  decreased_profit = [amt for amt in profit_losses if amt == min]
+print(f'Greatest Decrease: ', decreased profit)
 
 # print the analysis to the terminal and export a text file with the results.
 texfile = 
