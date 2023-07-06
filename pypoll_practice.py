@@ -11,6 +11,7 @@ import csv
 #read csv
   with open(csvpath, 'r') as csvfile:
       csvreader = csv.reader(csvfile, delimiter=",")
+      print(csvreader)
 
 #store the csv headers
     election_csv_header = next(csvreader) 
@@ -27,7 +28,7 @@ total_votes = 0
     print(candidate, vote_counts)
 
 
-      
+    #create vaiables  
     row =[ballotID, County, candidate]
     result = {}
     candidate = [row[2]   #column3
@@ -41,16 +42,12 @@ total_votes = 0
           candidate_votes = 1
 
 
-        totalPurchases = totalPurchases + 1;
-        totalSum = totalSum + price;
-        if(price > 1800):
-            sumAbove1800 = sumAbove1800 + price;
-            countAbove1800 = countAbove1800 + 1;
 
 
 
-
-
+#create text file
+with open("PyPoll.txt", "a") as file:
+    file.write("Your text goes here")
 
 ### The total number of votes each candidate won ** candidate_votes
 
